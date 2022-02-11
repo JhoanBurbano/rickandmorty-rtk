@@ -12,7 +12,7 @@ const CharacterList = () => {
     }, [dispatch])
   return (
   <div className='container row justify-content-between border p-3 bg-light'>
-    {characters.map(c=><Character key={c.id} name={c.name} species={c.species} image={c.image} gender={c.gender} />)}
+    {characters.map(c=><Character key={c.id} name={c.name} species={c.species} id={c.id} image={c.image} gender={c.gender} />)}
   </div>
 
   )

@@ -6,8 +6,8 @@ const CharacterPage = () => {
   return (
       <>
       <h2 className='h4 my-3 text-success text-center'>It's a Full Character List</h2>
-      <CharacterViewModal/>
     <CharacterList />
+      <CharacterViewModal/>
       </>
   )
 }

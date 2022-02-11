@@ -4,9 +4,9 @@ import axios from "axios";
 export const characterSlice = createSlice({
     name: 'character',
     initialState: {
+        view: {},
         list: [],
         filter: [],
-        view: {}
     },
     reducers: {
         setCharacterList: (state, action)=>{
@@ -18,11 +18,15 @@ export const characterSlice = createSlice({
                 const regEx= new RegExp(`^${action.payload}`, 'i')
                 return (char.name.toLowerCase().includes(action.payload.toLowerCase()) || regEx.test(char.gender.toLowerCase()) || regEx.test(char.species.toLowerCase()))
             })
+        },
+        viewCharacter: (state, action)=>{
+            state.view = {}
+            state.view = action.payload
         }
     }
 })
 
-export const {setCharacterList, searchCharacter} = characterSlice.actions;
+export const {setCharacterList, searchCharacter, viewCharacter} = characterSlice.actions;
 
 export default characterSlice.reducer;
 
